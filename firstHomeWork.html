@@ -87,9 +87,10 @@ function init(){
 	
 	///做一個box
 	
-	CylinderG = new THREE.CylinderGeometry(15, 15, 60, 16, 1, false, 0);
+	CylinderG = new THREE.CylinderGeometry(15, 15, 50, 16, 1, false, 0);
 	Cylinder = new THREE.Mesh(CylinderG, new THREE.MeshNormalMaterial());
-	//var cylinder = new THREE.Mesh( geometry, material );
+	//var cylindererl = new THREE.Mesh( geometry, Cylinder );
+	Cylinder.position.set(0, 30, 0);
 	scene.add(Cylinder);
 	//
 	geometry = new THREE.Geometry();
