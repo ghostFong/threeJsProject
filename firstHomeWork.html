@@ -1,7 +1,6 @@
 <html>
 <head>
 <style>
-
 #Switch{
  position: absolute;
  top: 0px;
@@ -11,7 +10,6 @@
  color: 0Xfff00;
 
 }
-
 </style>
 </head>
 <body>
@@ -21,9 +19,6 @@
 <script src = "https://threejs.org/examples/js/controls/OrbitControls.js"></script>
 <script>
 
-
-
-
 var Scene, camera;
 //物件
 var car;
@@ -31,22 +26,8 @@ var theta = 0;
 var userCamera = false;
 var controls;
 
-/*
-function toggleTurnCamera(){
-	userCamera = !userCamera;
-	if(userCamera == false){
-		controls.enabled = true;
-		camera.lookAt(new THREE.Vector3(0, 0, 0));
-	}else{
-		controls.enabled = false;
-	}
-}
-*/
-
-
 init();
 animate();
-
 
 function init(){
 	//set render, scene, camera
@@ -67,7 +48,7 @@ function init(){
 	camera.position.set(0, 40, 160);
 	
 	//set up objects in the Scene
-	var gridHelper = new THREE.GridHelper(200, 20, 'red', 'while');
+	var gridHelper = new THREE.GridHelper(250, 20, 'red', 'while');
 	scene.add(gridHelper);
 	
 	window.addEventListener('resize', onWindowResize, false);
@@ -84,14 +65,21 @@ function init(){
 			controls.enabled = false;
 		}
 	})
-	
 	///做一個box
-	
 	CylinderG = new THREE.CylinderGeometry(15, 15, 50, 16, 1, false, 0);
 	Cylinder = new THREE.Mesh(CylinderG, new THREE.MeshNormalMaterial());
-	//var cylindererl = new THREE.Mesh( geometry, Cylinder );
 	Cylinder.position.set(0, 30, 0);
 	scene.add(Cylinder);
+	//
+	CylinderA = new THREE.CylinderGeometry(15, 15, 20, 16, 1, false, 0);
+	Cylinder2 = new THREE.Mesh(CylinderA, new THREE.MeshNormalMaterial());
+	Cylinder2.position.set(100, 10, 0);
+	scene.add(Cylinder2);
+	//
+	coneG = new THREE.ConeGeometry( 15, 20, 32 );
+	cone1 = new THREE.Mesh(coneG, new THREE.MeshNormalMaterial());
+	cone1.position.set(0, 10, 100);
+	scene.add(cone1);
 	//
 	geometry = new THREE.Geometry();
 	geometry.vertices.push(
